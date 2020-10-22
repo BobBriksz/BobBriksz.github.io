@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Untold Story of the PPP
-subtitle: What the lack of demographic data wont tell you
+title: **Untold Story of the PPP**
+subtitle: **What the lack of demographic data wont tell you**
 cover-img: /assets/img/corona virus header.jpg
 thumbnail-img: /assets/img/corona virus header.jpg
 share-img: /assets/img/corona virus header.jpg
