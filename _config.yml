@@ -27,7 +27,7 @@ round-avatar: False
 
 # If you want to have an image logo in the top-left corner instead of having the title of the website,
 # then specify the following parameter
-#title-img: /path/to/image
+title-img: "/assets/img/bobbertwithlime.png"
 
 
 # --- Footer social media links --- #
@@ -94,7 +94,7 @@ navbar-col: "#F26659"
 navbar-text-col: "#F0EFF4"
 navbar-border-col: "#8CA9D3"
 page-col: "#8CA9D3"
-text-col: "#F0EFF4"
+text-col: "#45464f"
 link-col: "#F0EFF4"
 hover-col: "#F0EFF4"
 footer-col: "#EBC999"
