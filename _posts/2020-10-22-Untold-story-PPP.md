@@ -17,7 +17,9 @@ To try and get a better idea of where the loans went in New York State, I merged
 The first data set (of PPP loans over 150 thousand), separated the data in buckets of loan amounts instead of specific loan amounts for each loan. When we add that to the census&#39; demographic data(Figure 1) we can see that majority white zip codes received many, many more loans than majority non-white zips.
 ![Figure 1](/assets/img/Estimated_PPP_over_150.png)
 The second data set (of PPP loans under 150 thousand) provided specific loan amounts for each loan that was given out in New York, with that, we can more specifically show how many loan dollars went to each zip. Knowing how much went to each zip we can see per capita the loan dollars that went to each zip code (Figure 2). Majority white zip codes got on average $559.71 per person in loan assistance, while majority non-white zip codes were only afforded $299.92 per person in loan assistance.
-![Figure 2]((/assets/img/Estimated_PPP_over_150.png)
+
+![Figure 2](/assets/img/Estimated_PPP_under_150-2.png)
+
 The PPP was created to help all Americans and because we don&#39;t have significant demographic data from the PPP it is hard to see where loans went. We see what the PPP cannot show, that there was a failure in the PPP and loan dollars were not properly distributed. Lack of data transparency hides this obvious disparity, preventing impactful and targeted assistance. The Small Business Administration (SBA) has recognized the importance of demographic data and in response said:
 
 &quot;_PPP loan data reflects the information submitted by lenders to the SBA for PPP loans. Approximately 75% of all PPP loans did not include any demographic information at the time of loan application. The loan forgiveness application expressly requests demographic information for borrowers so that SBA can better understand which small businesses are benefiting from PPP loans.&quot; ( SBA, Paycheck Protection Program (PPP) Loan Data – Key Aspects – Updated August 20, 2020)_
