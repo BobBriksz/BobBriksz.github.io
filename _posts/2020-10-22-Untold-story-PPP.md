@@ -2,9 +2,9 @@
 layout: post
 title: Untold Story of the PPP
 subtitle: What the lack of demographic data wont tell you
-cover-img: /assets/img/Estimated_PPP_over_150.png
-thumbnail-img: /assets/img/Estimated_PPP_over_150.png
-share-img: /assets/img/Estimated_PPP_over_150.png
+cover-img: /assets/img/ppp data header.png
+thumbnail-img: /assets/img/ppp data header.png
+share-img: /assets/img/ppp data header.png
 tags: [Data Science, Visualization, New York, Corona Virus, PPP]
 ---
 
@@ -18,7 +18,7 @@ The first data set (of PPP loans over 150 thousand), separated the data in bucke
 ![Figure 1](/assets/img/Estimated_PPP_over_150.png)
 The second data set (of PPP loans under 150 thousand) provided specific loan amounts for each loan that was given out in New York, with that, we can more specifically show how many loan dollars went to each zip. Knowing how much went to each zip we can see per capita the loan dollars that went to each zip code (Figure 2). Majority white zip codes got on average $559.71 per person in loan assistance, while majority non-white zip codes were only afforded $299.92 per person in loan assistance.
 
-![Figure 2](/assets/img/Estimated_PPP_under_150-2.png)
+![Figure 2](/assets/img/Estimated_PPP_under_150.png)
 
 The PPP was created to help all Americans and because we don&#39;t have significant demographic data from the PPP it is hard to see where loans went. We see what the PPP cannot show, that there was a failure in the PPP and loan dollars were not properly distributed. Lack of data transparency hides this obvious disparity, preventing impactful and targeted assistance. The Small Business Administration (SBA) has recognized the importance of demographic data and in response said:
 
