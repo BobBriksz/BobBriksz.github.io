@@ -1,3 +1,14 @@
+---
+layout: post
+title: Modeling allegations made against the NYPD
+subtitle: What factors make allegations substantial
+cover-img: /assets/img/ccrbnyc.png
+thumbnail-img: /assets/img/ccrbnyc.png
+share-img: /assets/img/ccrbnyc.png
+tags: [Data Science, CCRB, New York, NYPD]
+---
+
+
 Earlier this year a data dump of Civilian Complain Review Board(CCRB) was released by ProPublica. The ensuing data set included allegations against almost 4000 New York City Police Department officers, and whether the CCRB substantiated the claims. Every officer in the data set had at least one substantiated claim against them. So using this data, I attempted to model if the claims would be substantiated.
 
 Before modeling even began I knew it would be important to clean the data as well as engineer some features. As a classification problem I had to feature the target matrix, because the original target (board_disposition)) had 3 possible values (substantiated, unsubstantiated, and exonerated). The new target matrix was a Boolean of if the complaint claim was simply substantiated or not, making a binary classification.  
