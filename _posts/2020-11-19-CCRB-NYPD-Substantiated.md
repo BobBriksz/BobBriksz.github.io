@@ -15,9 +15,9 @@ Before modeling began, I knew it would be important to clean the data and engine
 
 To reduce leakage, I used `pandas_profiling` (shown below) to identify some high cardinality columns as well as unique identifiers for each complaint/officer. Since names shouldn't inherently have an effect on whether the claims were substantiated, all columns with officer names were dropped. Other dropped columns included anything that wouldn't have a result on the substantiated claim, or were too high cardinality for the model. The "allegations" feature was not dropped, though it was high cardinality, as it is a key determinate of a complaint.
 
-![Figure 1](/assets/img/pp overview.png) 
+![Figure 1](/assets/img/pp overview.PNG) 
 
-![Figure 2](/assets/img/pp warnings.png)
+![Figure 2](/assets/img/pp warnings.PNG)
 
 Another feature I thought would help the model is the length of the review (`review_length_mo`), which because they give us year and month for when the complaints were opened and closed, was very easy to engineer.
 
