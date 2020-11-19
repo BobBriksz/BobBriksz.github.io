@@ -35,4 +35,6 @@ Next I did my random forest model for better performance than a simple `Logistic
 
 I was unable to build any models that could predict better than the baseline, but further research is warranted. I think the model can be improved in the future by breaking down some features, such as the `precinct` feature, which can be broken down into more substantial variables like location and demographics.. I think more info is needed to be able to properly predict if the CCRB substantiates claims, but as of right now, I can't seem to build a model that truly beats the baseline metric.
 
- Link to Github repository where you can find the notebook and the data: https://github.com/BobBriksz/Blog-2
+ Link to Github repository where you can find the notebook and the data: 
+ 
+ [github](https://github.com/BobBriksz/Blog-2)
