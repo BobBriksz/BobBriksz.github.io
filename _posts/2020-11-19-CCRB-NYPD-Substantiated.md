@@ -38,7 +38,7 @@ Next I did my random forest model for better performance than a simple `Logistic
 
 Frustrated, down but not out, I attempted a XGBoost model as well, to see if it would outperform my previous models and give me something to use! Unfortunately I hit snags yet again, and the base XGBoost model's accuracy was only .72, even WORSE than what I had with my logistic regression. I still thought I could make something happen with this model so I tuned it (best four hours of my life). Hyperparameters tuned for the XGBoost model were: `eta`, `num_parallel_tree`, `max_delta_step`, `n_estimators`, and `max_depth`. I used a lot of parameters on my XGBoost because I was getting so frustrated with my lack of models. `max_delta_step`, specifically was chosen because the documentation says it helps models with heavily weigted majority class. Again I experienced failure, as my models accuracy was .71.
 
-![image]!(/assets/img/xgboost accuracy.png)
+![image](/assets/img/xgboost accuracy.png)
 ![image](/assets/img/tuned xgboost.png)
 
 I was unable to build any models that could predict better than the baseline, but I was not done here! Luckily one of my classmates also had a similar issue, where the baseline was better than all models, even the tuned ones. `imblearn.over_sampling.smote`, would be our savior (Thanks [Ashely](<https://ashley-brooks.medium.com/will-your-app-be-a-success-in-the-google-play-store-108c690f1421>)). SMOTE realigns the data so that the majority class (unsubstantiated) does not totally overpower my minority class (substantiated) Now I was ready to smite (haha) the data. SMOTE does not like categorical variables, but thankfully I had already transformed my data before hand, so dropping that into the module was a piece of cake.
