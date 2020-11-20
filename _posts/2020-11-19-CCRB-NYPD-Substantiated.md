@@ -19,38 +19,38 @@ To reduce leakage, I used `pandas_profiling` (shown below) to identify some high
 
 Now we can get to the fun part, modeling! Firstly I did a baseline classification of the majority class (unsubstantiated(0)), around .74 accuracy score. Because there are so few substantiated claims (the CCRB feels that in many cases they aren't able to reach conclusions because the NYPD doesn't provide crucial evidence) most of the time we can simply guess that the claims were not substantiated. I thought I could do better!
 
-(/assets/img/baseline classification score.png)
+![image](/assets/img/baseline classification score.png)
 
 Next I transformed my data before running it through the model. I used a column transformer to impute categorical data using the 'most frequent' strategy, and then the categorical data was ordinal encoded in the transformer. The numerical data was just imputed.
 
 After the transforming, the data was fit to a simple `LogisticRegression` model, and the model provided an accuracy score about .5 above the baseline.
 
-(/assets/img/logistic regression accuracy.png)
+![image](/assets/img/logistic regression accuracy.png)
 
 Next I did my random forest model for better performance than a simple `LogisticRegression`. With no tuning or pruning of my forest, the accuracy score of the model on the test set was .73 (approximately .01 point under my baseline!). I thought I could do better, so I used `GridSearchCV` to extract  the best parameters. Hyperparameters I thought I should tune were: `max_depth`, `n_estimators`, `min_impurity_decrease`, `max_features`, and `min_samples_leaf`, to make my model better. After the GridSearch came up with the best parameters for my model, I refit on the data again, but this time my model just met the performance of my baseline.
 
-(/assets/img/random forest.png)
-(/assets/img/tuned random forest.png)
+![image](/assets/img/random forest.png)
+![image](/assets/img/tuned random forest.png)
 
 Frustrated, down but not out, I attempted a XGBoost model as well, to see if it would outperform my previous models and give me something to use! Unfortunately I hit snags yet again, and the base XGBoost model's accuracy was only .72, even WORSE than what I had with my logistic regression. I still thought I could make something happen with this model so I tuned it (best four hours of my life). Hyperparameters tuned for the XGBoost model were: `eta`, `num_parallel_tree`, `max_delta_step`, `n_estimators`, and `max_depth`. I used a lot of parameters on my XGBoost because I was getting so frustrated with my lack of models. `max_delta_step`, specifically was chosen because the documentation says it helps models with heavily weigted majority class. Again I experienced failure, as my models accuracy was .71.
 
-(/assets/img/xgboost accuracy.png)
-(/assets/img/tuned xgboost.png)
+![image]!(/assets/img/xgboost accuracy.png)
+![image](/assets/img/tuned xgboost.png)
 
-I was unable to build any models that could predict better than the baseline, but I was not done here! Luckily one of my classmates also had a similar issue, where the baseline was better than all models, even the tuned ones. `imblearn.over_sampling.smote`, would be our savior (Thanks ![Ashely]( <https://ashley-brooks.medium.com/will-your-app-be-a-success-in-the-google-play-store-108c690f1421)>). SMOTE realigns the data so that the majority class (unsubstantiated) does not totally overpower my minority class (substantiated) Now I was ready to smite (haha) the data. SMOTE does not like categorical variables, but thankfully I had already transformed my data before hand, so dropping that into the module was a piece of cake.
+I was unable to build any models that could predict better than the baseline, but I was not done here! Luckily one of my classmates also had a similar issue, where the baseline was better than all models, even the tuned ones. `imblearn.over_sampling.smote`, would be our savior (Thanks ![Ashely]( <https://ashley-brooks.medium.com/will-your-app-be-a-success-in-the-google-play-store-108c690f1421> )). SMOTE realigns the data so that the majority class (unsubstantiated) does not totally overpower my minority class (substantiated) Now I was ready to smite (haha) the data. SMOTE does not like categorical variables, but thankfully I had already transformed my data before hand, so dropping that into the module was a piece of cake.
 
 After using SMOTE my baseline was now .5, and I could actually put my models to work. I added all of my transformed data into both the tuned and untuned models and got much better predictions than before.
 
-(/assets/img/smoted baseline.png)
-(/assets/img/sm-logistic model accuracy.png)
-(/assets/img/sm-random forest base.png)
-(/assets/img/sm-tuned random forest.png) 
-(/assets/img/sm-XGBoost model.png)
-(/assets/img/sm-tuned xgboost score.png)
+![image](/assets/img/smoted baseline.png)
+![image](/assets/img/sm-logistic model accuracy.png)
+![image](/assets/img/sm-random forest base.png)
+![image](/assets/img/sm-tuned random forest.png) 
+![image](/assets/img/sm-XGBoost model.png)
+![image](/assets/img/sm-tuned xgboost score.png)
 
 My tuned XGBoost model ended up being my best model with the most accuracy compared to my SMOTE baseline. Below we can see the importance of each feature in the model.
 
-(/assets/img/sm-XGBoost permutation importance.png)
+![image](/assets/img/sm-XGBoost permutation importance.png)
 
 The feature I added (`lots_of_allegations`) ended up not improving the model. I think because every officer in the data set  had at least one substantiated allegation, it didn't matter to the model if they had more allegations. In the future I think the models can be improved by breaking down variables even further into more features. For example, 'precinct' can probably be broken down into location, and location could be broken down into demographic data, all which could have an effect on the model in the future.
 
